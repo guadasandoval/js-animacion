@@ -1,0 +1,255 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    --border-radius: 100px;
+    --blue: #2449B5;
+    --sky: #788dd8;
+    --orange: #E78208;
+    --grey: #E2E1DB;
+    --gutter: 3.125vw 6.25vw;
+
+    margin: 0;
+    padding: 0;
+    background: #e2e1db;
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Syne', sans-serif;
+}
+
+h1{
+    font-size: 70px;
+    /* multiplica el numero por el size = nxfont-size */
+    line-height: 1em;  
+    margin: 0;
+}
+
+h2{
+    font-size: 60px;
+    margin: 0;
+}
+
+a{
+    color: #282828;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 100px);
+    top: 100px;
+    z-index: 2;
+}
+
+section.sticky{
+    position: sticky;
+    margin-top: 100px;
+}
+
+section.full-screen{
+    height: 100vh;
+    top: 0;
+    margin-top: 0;
+    z-index: 3;
+}
+
+/* navigation */
+nav{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    z-index: 1;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 45px;
+}
+
+nav ul li a {
+    color: #282828;
+    font-family: 'Space Mono', monospace;
+}
+
+/* about section */
+
+section.about .empty{
+    flex-basis: 37.5%;
+    /* background: var(--orange); */
+    border-radius: var(--border-radius);
+    transition: flex-basis 1s cubic-bezier(0,.87,.4,.99);
+    max-width: 62.5vw;
+    background-image: url("../images/empty.png");
+    background-size:cover;
+}
+
+section.about article{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+section.about article .title{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    background: var(--blue);
+    border-radius: var(--border-radius);
+    padding: var(--gutter);
+    transition: flex-basis 1s cubic-bezier(0,.87,.4,.99);
+}
+
+section.about article .description{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--sky);
+    border-radius: var(--border-radius);
+    padding: var(--gutter);
+    color: #fff;
+}
+
+/* services section */
+
+section.services article{
+    display: flex;
+    width: 100%;
+}
+
+section.services figure{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 56.25vw;
+    margin: 0;
+    background: var(--orange);
+    border-radius: var(--border-radius);
+    transition: flex-basis 1s cubic-bezier(0,.87,.4,.99);
+    max-width: 62.5vw;
+}
+
+section.services figure img{
+    width: 40%;
+}
+
+section.services .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    background: #282828;
+    padding: var(--gutter);
+    border-radius: var(--border-radius);
+}
+
+section.services .text a{
+    font-family: 'Space Mono', monospace;
+}
+
+section.services.services-html figure {
+    background: var(--sky);
+}
+
+section.services.services-css figure {
+    background: var(--orange);
+}
+
+section.services.services-css .text h2,
+section.services.services-css .text a {
+    color: var(--orange);
+}
+
+section.services.services-js figure{
+    background: var(--blue);
+}
+
+section.services.services-js .text h2,
+section.services.services-js .text a {
+    color: var(--blue);
+}
+
+section.contact{
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(var(--blue), var(--orange), var(--orange), var(--grey));
+    border-radius: var(--border-radius);
+}
+
+section.contact a{
+    font-size: 100px;
+    color: #000;
+    font-weight: bold;
+    transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: filter;
+}
+
+section.contact a:hover{
+    color: #fff;
+    filter: blur(20px);
+}
+
+section.services.services-html figure img {
+    animation-name: float;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(-5%);
+    }
+
+    100%{
+        transform: translateY(5%);
+    }
+}
+@media only screen and (max-width: 768px){
+    html, body{
+        --border-radius: 50px;
+        --gutter: 6.25vw;
+    }
+
+    h1{
+        font-size: 60px;
+    }
+
+    h2{
+        font-size: 40px;
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    section.services article{
+        flex-direction: column;
+    }
+
+    section.services figure{
+        flex-basis: 25vh;
+    }
+
+    section.services figure img{
+        width: 20%;
+    }
+    section.contact a {
+        font-size: 40px;
+        transform: rotate(90deg);
+    }
+}
