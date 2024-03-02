@@ -4,15 +4,17 @@
 
 html, body {
     --border-radius: 100px;
-    --blue: #2449B5;
-    --sky: #788dd8;
+    --black:#000;
+    --blue: #2521ff;
+    --red: #ff0000;
+    --yellow:#FFFF00;
     --orange: #E78208;
-    --grey: #E2E1DB;
+    --grey: #f4f4f4;
     --gutter: 3.125vw 6.25vw;
 
     margin: 0;
     padding: 0;
-    background: #e2e1db;
+    background: var(--black);
     color: #fff;
     font-size: 30px;
     font-family: 'Syne', sans-serif;
@@ -31,7 +33,7 @@ h2{
 }
 
 a{
-    color: #282828;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -82,7 +84,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #282828;
+    color: #fff;
     font-family: 'Space Mono', monospace;
 }
 
@@ -90,11 +92,10 @@ nav ul li a {
 
 section.about .empty{
     flex-basis: 37.5%;
-    /* background: var(--orange); */
     border-radius: var(--border-radius);
     transition: flex-basis 1s cubic-bezier(0,.87,.4,.99);
-    max-width: 62.5vw;
-    background-image: url("../images/empty.png");
+    max-width: 60vw;
+    background-image: url("../images/personal.jpeg");
     background-size:cover;
 }
 
@@ -118,17 +119,42 @@ section.about article .description{
     flex: 1;
     display: flex;
     align-items: center;
-    background: var(--sky);
+    background: var(--red);
     border-radius: var(--border-radius);
     padding: var(--gutter);
     color: #fff;
 }
+/* logo section */
+.logosec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    height: 500px;
+}
+
+.logo{
+    position: absolute;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
 
 /* services section */
 
 section.services article{
     display: flex;
     width: 100%;
+    color: var(--black);
 }
 
 section.services figure{
@@ -152,7 +178,7 @@ section.services .text{
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    background: #282828;
+    background: var(--grey);
     padding: var(--gutter);
     border-radius: var(--border-radius);
 }
@@ -162,16 +188,21 @@ section.services .text a{
 }
 
 section.services.services-html figure {
-    background: var(--sky);
+    background: var(--yellow);
 }
 
 section.services.services-css figure {
-    background: var(--orange);
+    background: var(--red);
+}
+
+section.services.services-html .text h2,
+section.services.services-html .text a {
+    color: var(--black);
 }
 
 section.services.services-css .text h2,
 section.services.services-css .text a {
-    color: var(--orange);
+    color: var(--red);
 }
 
 section.services.services-js figure{
@@ -184,23 +215,34 @@ section.services.services-js .text a {
 }
 
 section.contact{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(var(--blue), var(--orange), var(--orange), var(--grey));
+    background: var(--blue);
+    background: var(--blue);
     border-radius: var(--border-radius);
+    box-sizing: border-box;
 }
 
 section.contact a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 100px;
-    color: #000;
+    padding: 200px;
+    height: 700px;
+    color: #fff;
     font-weight: bold;
     transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
     will-change: filter;
 }
 
 section.contact a:hover{
-    color: #fff;
-    filter: blur(20px);
+    color: #000;
+    filter: opacity(100%);
+    background-image: url("../images/a_hover.svg");
+    background-size: cover;
 }
 
 section.services.services-html figure img {
