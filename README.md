@@ -8,6 +8,6 @@ I decided to create Menta, a personal blog to share my hobbies: pottery, live co
 Finally, during the course, I also learned how to animate objects without frameworks and look trends and inspiration.
 
 ## deploy 🚀
-['Menta Vercel'](url completa)
+['Menta Vercel'](https://mentastudio.vercel.app/)
 
 
