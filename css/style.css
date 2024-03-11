@@ -161,15 +161,17 @@ section.services figure{
     justify-content: center;
     flex-basis: 56.25vw;
     margin: 0;
-    /* background: var(--yellow); */
     border-radius: var(--border-radius);
     transition: flex-basis 1s cubic-bezier(0,.87,.4,.99);
     max-width: 62.5vw;
+    position: relative;
 }
 
 section.services figure img{
     width: 40%;
+    z-index: 1;
 }
+
 
 section.services .text{
     display: flex;
@@ -250,18 +252,23 @@ section.services.services-html figure img {
     animation-timing-function: ease-in-out;
 }
 
-.glass-container {
-    background-color: rgba(255, 255, 255, 0.3); /* Color blanco translúcido */
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px); /* Aplicar desenfoque */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+section.services.services-js figure img {
+    animation-name: formRotate;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.contenedor {
+    overflow: hidden; 
+    position: relative;
+  }
+  
+  .figura {
+    position: absolute;
+    height: 160px;
   }
 
-  .content {
-    color: #fff;
-    text-align: center;
-  }
 @keyframes float{
     0%{
         transform: translateY(-5%);
@@ -271,6 +278,17 @@ section.services.services-html figure img {
         transform: translateY(5%);
     }
 }
+
+@keyframes formRotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @media only screen and (max-width: 1024px){
     html, body{
         --border-radius: 50px;
